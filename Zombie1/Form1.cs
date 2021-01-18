@@ -19,7 +19,7 @@ namespace Zombie1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            "Siema Wojtek"
+            "Siema Wojtek test test"
         }
     }
 }
