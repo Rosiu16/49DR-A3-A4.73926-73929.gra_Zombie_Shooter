@@ -21,5 +21,20 @@ namespace Zombie1
         {
             "Siema Wojtek test test test2"
         }
+
+        private void MainTimerEvent(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KeyIsDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void KeyIsUp(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
