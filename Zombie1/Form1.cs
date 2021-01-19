@@ -33,7 +33,7 @@ namespace Zombie1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            "Siema Wojtek test test test2"
+            
         }
 
         private void MainTimerEvent(object sender, EventArgs e)
@@ -43,7 +43,31 @@ namespace Zombie1
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Left)
+            {
+                goLeft = true;
+                facing = "left";
+                player.Image = Properties.Resources.left;
+                
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goRight = true;
+                facing = "right";
+                player.Image = Properties.Resources.right;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                goUp = true;
+                facing = "up";
+                player.Image = Properties.Resources.up;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                goDown = true;
+                facing = "down";
+                player.Image = Properties.Resources.down;
+            }
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
