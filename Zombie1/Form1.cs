@@ -20,8 +20,7 @@ namespace Zombie1
         int ammo = 10;
         int ZombieSpeed = 3;
         Random RandNum = new Random();
-
-
+        int score;
         List<PictureBox> zombieslist = new List<PictureBox>();
 
 
@@ -38,7 +37,34 @@ namespace Zombie1
 
         private void MainTimerEvent(object sender, EventArgs e)
         {
+            if(playerhealth > 1)
+            {
+                healthBar.Value = playerhealth;
+            }
+            else
+            {
+                gameOver = true;
+            }
 
+            txtAmmo.Text = "Ammo: " + ammo;
+            txtScore.Text = "Kills: " + score;
+
+            if(goLeft == true && player.Left > 0)
+            {
+                player.Left -= speed;
+            }
+            if(goRight == true && player.Left + player.Width < this.ClientSize.Width)
+            {
+                player.Left += speed;
+            }
+            if(goUp == true && player.Top > 0)
+            {
+                player.Top -= speed;
+            }
+            if(goDown == true && player.Top + player.Height < this.ClientSize.Height)
+            {
+                player.Top += speed;
+            }
         }
 
         private void KeyIsDown(object sender, KeyEventArgs e)
@@ -72,6 +98,27 @@ namespace Zombie1
 
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Left)
+            {
+                goLeft = false;
+
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goRight = false;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                goUp = false;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                goDown = false;
+            }
+            if (e.KeyCode == Keys.Space)
+            {
+                ShootBullet(facing);
+            }
 
         }
         private void ShootBullet(string direction)
