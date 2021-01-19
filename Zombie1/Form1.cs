@@ -12,6 +12,20 @@ namespace Zombie1
 {
     public partial class Form1 : Form
     {
+
+        bool goLeft, goRight, goUp, goDown, gameOver;
+        string facing = "up";
+        int playerhealth = 100;
+        int speed = 10;
+        int ammo = 10;
+        int ZombieSpeed = 3;
+        Random RandNum = new Random();
+
+
+        List<PictureBox> zombieslist = new List<PictureBox>();
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +47,18 @@ namespace Zombie1
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
+        {
+
+        }
+        private void ShootBullet(string direction)
+        {
+
+        }
+        private void MakeZombies()
+        {
+
+        }
+        private void RestartGame()
         {
 
         }
