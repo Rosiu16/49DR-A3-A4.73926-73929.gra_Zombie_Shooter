@@ -143,6 +143,21 @@ namespace Zombie1
 
         }
 
+        private void DropAmmo()
+        {
+            PictureBox ammo = new PictureBox();
+            ammo.Image = Properties.Resources.ammo_Image;
+            ammo.SizeMode = PictureBoxSizeMode.AutoSize;
+            ammo.Left = RandNum.Next(10, this.ClientSize.Width - ammo.Width);
+            ammo.Top = RandNum.Next(10, this.ClientSize.Height - ammo.Height);
+            ammo.Tag = "ammo";
+            this.Controls.Add(ammo);
+
+            ammo.BringToFront();
+            player.BringToFront();
+        }
+
+
         private void RestartGame()
         {
 
