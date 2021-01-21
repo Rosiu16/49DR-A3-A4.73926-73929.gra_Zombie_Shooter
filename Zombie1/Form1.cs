@@ -131,8 +131,18 @@ namespace Zombie1
         }
         private void MakeZombies()
         {
+            PictureBox zombie = new PictureBox();
+            zombie.Tag = "zombie";
+            zombie.Image = Properties.Resources.zdown;
+            zombie.Left = RandNum.Next(0, 900);
+            zombie.Top = RandNum.Next(0, 800);
+            zombie.SizeMode = PictureBoxSizeMode.AutoSize;
+            zombieslist.Add(zombie);
+            this.Controls.Add(zombie);
+            player.BringToFront();
 
         }
+
         private void RestartGame()
         {
 
