@@ -57,7 +57,7 @@ namespace Zombie1
             {
                 player.Left += speed;
             }
-            if(goUp == true && player.Top > 0)
+            if(goUp == true && player.Top > 41)
             {
                 player.Top -= speed;
             }

@@ -83,7 +83,7 @@ namespace Zombie1
             // player
             // 
             this.player.Image = global::Zombie1.Properties.Resources.up;
-            this.player.Location = new System.Drawing.Point(325, 529);
+            this.player.Location = new System.Drawing.Point(383, 41);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(71, 100);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
