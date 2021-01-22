@@ -44,6 +44,9 @@ namespace Zombie1
             else
             {
                 gameOver = true;
+                player.Image = Properties.Resources.dead;
+                GameTimer.Stop();
+
             }
 
             txtAmmo.Text = "Ammo: " + ammo;
@@ -64,6 +67,19 @@ namespace Zombie1
             if(goDown == true && player.Top + player.Height < this.ClientSize.Height)
             {
                 player.Top += speed;
+            }
+
+            foreach (Control x in this.Controls) 
+            {
+                if (x is PictureBox && (string)x.Tag == "ammo")
+                {
+                    if (player.Bounds.IntersectsWith(x.Bounds))
+                    {
+                        this.Controls.Remove(x);
+                        ((PictureBox)x).Dispose();
+                        ammo += 5;
+                    }
+                }
             }
         }
 
@@ -156,7 +172,7 @@ namespace Zombie1
             ammo.Image = Properties.Resources.ammo_Image;
             ammo.SizeMode = PictureBoxSizeMode.AutoSize;
             ammo.Left = RandNum.Next(10, this.ClientSize.Width - ammo.Width);
-            ammo.Top = RandNum.Next(10, this.ClientSize.Height - ammo.Height);
+            ammo.Top = RandNum.Next(60, this.ClientSize.Height - ammo.Height);
             ammo.Tag = "ammo";
             this.Controls.Add(ammo);
 
