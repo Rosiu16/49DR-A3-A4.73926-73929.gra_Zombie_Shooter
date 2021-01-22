@@ -21,7 +21,7 @@ namespace Zombie1
         int ZombieSpeed = 3;
         Random RandNum = new Random();
         int score;
-        List<PictureBox> zombieslist = new List<PictureBox>();
+        List<PictureBox> zombiesList = new List<PictureBox>();
 
 
 
@@ -183,6 +183,28 @@ namespace Zombie1
 
         private void RestartGame()
         {
+            player.Image = Properties.Resources.up;
+
+            foreach (PictureBox i in zombiesList)
+            {
+                this.Controls.Remove(i);
+            }
+            zombiesList.Clear();
+
+            for (int i = 0; i < 3; i ++)
+            {
+                MakeZombies();
+            }
+            goUp = false;
+            goDown = false;
+            goLeft = false;
+            goRight = false;
+
+            playerhealth = 100;
+            score = 0;
+            ammo = 10;
+
+            GameTimer.Start();
 
         }
     }
