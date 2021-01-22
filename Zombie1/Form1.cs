@@ -28,6 +28,7 @@ namespace Zombie1
         public Form1()
         {
             InitializeComponent();
+            RestartGame();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -78,6 +79,55 @@ namespace Zombie1
                         this.Controls.Remove(x);
                         ((PictureBox)x).Dispose();
                         ammo += 5;
+                    }
+                }
+
+
+                if (x is PictureBox && (string)x.Tag == "zombie")
+                {
+                    if (x.Left > player.Left)
+                    {
+                        x.Left -= ZombieSpeed;
+                        ((PictureBox)x).Image = Properties.Resources.zleft;
+
+                    }
+                    if (x.Left < player.Left)
+                    {
+                        x.Left += ZombieSpeed;
+                        ((PictureBox)x).Image = Properties.Resources.zright;
+
+                    }
+                    if (x.Top > player.Top)
+                    {
+                        x.Top -= ZombieSpeed;
+                        ((PictureBox)x).Image = Properties.Resources.zup;
+
+                    }
+                    if (x.Top < player.Top)
+                    {
+                        x.Top += ZombieSpeed;
+                        ((PictureBox)x).Image = Properties.Resources.zdown;
+
+                    }
+                }
+
+                foreach ( Control j  in this.Controls)
+                {
+                    if (j is PictureBox && (string)j.Tag == "bullet" && x is PictureBox && (string)x.Tag == "zombie")
+                    {
+                        if (x.Bounds.IntersectsWith(j.Bounds))
+                        {
+                            score++;
+
+                            this.Controls.Remove(j);
+                            ((PictureBox)j).Dispose();
+                            this.Controls.Remove(x);
+                            ((PictureBox)x).Dispose();
+                            zombiesList.Remove(((PictureBox)x));
+                            MakeZombies();
+
+
+                        }
                     }
                 }
             }
@@ -160,7 +210,7 @@ namespace Zombie1
             zombie.Left = RandNum.Next(0, 900);
             zombie.Top = RandNum.Next(0, 800);
             zombie.SizeMode = PictureBoxSizeMode.AutoSize;
-            zombieslist.Add(zombie);
+            zombiesList.Add(zombie);
             this.Controls.Add(zombie);
             player.BringToFront();
 
