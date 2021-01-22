@@ -32,7 +32,7 @@ namespace Zombie1
 
             bulletTimer.Interval = speed;
             bulletTimer.Tick += new EventHandler(BulletTimerEvent);
-            bulletTimer.Start()
+            bulletTimer.Start();
 
 
         }

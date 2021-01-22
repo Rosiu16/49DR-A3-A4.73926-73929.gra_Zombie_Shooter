@@ -115,9 +115,16 @@ namespace Zombie1
             {
                 goDown = false;
             }
-            if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space  && ammo >0)
             {
+                ammo--;
                 ShootBullet(facing);
+
+                if (ammo <1)
+                {
+                    DropAmmo();
+
+                }
             }
 
         }
