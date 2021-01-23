@@ -38,7 +38,7 @@ namespace Zombie1
 
         private void MainTimerEvent(object sender, EventArgs e)
         {
-            if(playerhealth > 1)
+            if (playerhealth > 1)
             {
                 healthBar.Value = playerhealth;
             }
@@ -85,6 +85,14 @@ namespace Zombie1
 
                 if (x is PictureBox && (string)x.Tag == "zombie")
                 {
+                    if (player.Bounds.IntersectsWith(x.Bounds))
+                    {
+                        playerhealth -= 1;
+
+                    }
+
+
+
                     if (x.Left > player.Left)
                     {
                         x.Left -= ZombieSpeed;
@@ -135,6 +143,15 @@ namespace Zombie1
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
+
+            if (gameOver == true)
+            {
+
+                return;
+
+            }
+
+
             if (e.KeyCode == Keys.Left)
             {
                 goLeft = true;
@@ -181,7 +198,7 @@ namespace Zombie1
             {
                 goDown = false;
             }
-            if (e.KeyCode == Keys.Space  && ammo >0)
+            if (e.KeyCode == Keys.Space  && ammo >0 && gameOver == false )
             {
                 ammo--;
                 ShootBullet(facing);
@@ -191,6 +208,12 @@ namespace Zombie1
                     DropAmmo();
 
                 }
+            }
+
+            if (e.KeyCode == Keys.Enter && gameOver == true)
+            {
+                RestartGame();
+
             }
 
         }
@@ -249,6 +272,7 @@ namespace Zombie1
             goDown = false;
             goLeft = false;
             goRight = false;
+            gameOver = false; 
 
             playerhealth = 100;
             score = 0;

@@ -42,33 +42,33 @@ namespace Zombie1
             // txtAmmo
             // 
             this.txtAmmo.AutoSize = true;
-            this.txtAmmo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAmmo.Font = new System.Drawing.Font("Mistral", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtAmmo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtAmmo.Location = new System.Drawing.Point(12, 9);
             this.txtAmmo.Name = "txtAmmo";
-            this.txtAmmo.Size = new System.Drawing.Size(114, 29);
+            this.txtAmmo.Size = new System.Drawing.Size(104, 34);
             this.txtAmmo.TabIndex = 0;
             this.txtAmmo.Text = "Ammo: 0";
             // 
             // txtScore
             // 
             this.txtScore.AutoSize = true;
-            this.txtScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtScore.Font = new System.Drawing.Font("Mistral", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtScore.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtScore.Location = new System.Drawing.Point(378, 9);
             this.txtScore.Name = "txtScore";
-            this.txtScore.Size = new System.Drawing.Size(92, 29);
+            this.txtScore.Size = new System.Drawing.Size(95, 34);
             this.txtScore.TabIndex = 1;
             this.txtScore.Text = "Kills: 0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Font = new System.Drawing.Font("Mistral", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(666, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 29);
+            this.label2.Size = new System.Drawing.Size(93, 34);
             this.label2.TabIndex = 2;
             this.label2.Text = "Health: ";
             // 
@@ -100,7 +100,7 @@ namespace Zombie1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.DarkMagenta;
             this.ClientSize = new System.Drawing.Size(922, 653);
             this.Controls.Add(this.player);
             this.Controls.Add(this.healthBar);
